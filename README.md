@@ -14,7 +14,7 @@ Passionate about Data Analytics, Artificial Intelligence and emerging technologi
 
 Through academic and professional experiences, I have developed strong skills in Python, SQL, data analysis, database management and software development. I enjoy transforming raw data into meaningful insights and building innovative solutions that support decision-making and business performance.
 
-I am currently seeking a work-study opportunity (Alternance) starting in September 2026 in Data Analytics, Data Engineering, Business Intelligence or Artificial Intelligence.
+I am currently pursuing a Bachelor's degree in Computer Science at ECE Paris, with a strong interest in Data Analytics, Artificial Intelligence and data-driven technologies.
 
 📅 Work-study schedule: 3 weeks in company / 2 weeks at school.
 
