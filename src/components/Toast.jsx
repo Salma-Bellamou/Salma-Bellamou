@@ -24,33 +24,32 @@ const Toast = ({ message, isVisible, onClose, actionLabel, onAction }) => {
                         bottom: '30px',
                         left: '50%',
                         transform: 'translateX(-50%)',
-                        background: 'rgba(20, 20, 35, 0.95)',
-                        backdropFilter: 'blur(10px)',
-                        border: '1px solid var(--accent-cyan)',
+                        background: 'var(--surface)',
+                        border: '1px solid var(--border)',
                         padding: '16px 24px',
-                        borderRadius: '12px',
+                        borderRadius: '14px',
                         display: 'flex',
                         alignItems: 'center',
                         gap: '12px',
-                        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+                        boxShadow: 'var(--shadow-md)',
                         zIndex: 1000,
                         minWidth: '300px',
                         maxWidth: '90%'
                     }}
                 >
                     <div style={{
-                        background: 'rgba(0, 243, 255, 0.1)',
+                        background: 'var(--accent-soft)',
                         borderRadius: '50%',
                         padding: '8px',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center'
                     }}>
-                        <Check size={20} color="var(--accent-cyan)" />
+                        <Check size={20} color="var(--accent)" />
                     </div>
 
                     <div style={{ flex: 1 }}>
-                        <p style={{ margin: 0, color: 'white', fontWeight: '500', fontSize: '0.95rem' }}>
+                        <p style={{ margin: 0, color: 'var(--text-primary)', fontWeight: '500', fontSize: '0.95rem' }}>
                             {message}
                         </p>
                     </div>
@@ -60,8 +59,8 @@ const Toast = ({ message, isVisible, onClose, actionLabel, onAction }) => {
                             onClick={onAction}
                             style={{
                                 background: 'transparent',
-                                border: '1px solid var(--accent-cyan)',
-                                color: 'var(--accent-cyan)',
+                                border: '1px solid var(--accent)',
+                                color: 'var(--accent)',
                                 padding: '6px 12px',
                                 borderRadius: '6px',
                                 cursor: 'pointer',
