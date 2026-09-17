@@ -24,43 +24,43 @@ const ProjectPage = () => {
             </Link>
 
             <motion.div
-                className="card"
+                className="glass-card"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 style={{ padding: '40px' }}
             >
-                <div style={{ borderBottom: '1px solid var(--border)', paddingBottom: '20px', marginBottom: '30px' }}>
+                <div style={{ borderBottom: '1px solid var(--glass-border)', paddingBottom: '20px', marginBottom: '30px' }}>
                     <h1 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '20px' }}>{project.title}</h1>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-secondary)' }}>
-                            <Calendar size={18} color="var(--accent)" />
+                            <Calendar size={18} color="var(--accent-cyan)" />
                             <span>{project.period}</span>
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-secondary)' }}>
-                            <User size={18} color="var(--accent-2)" />
+                            <User size={18} color="var(--accent-purple)" />
                             <span>{project.role}</span>
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-secondary)' }}>
-                            <Briefcase size={18} color="var(--accent)" />
+                            <Briefcase size={18} color="var(--accent-cyan)" />
                             <span>{project.company}</span>
                         </div>
                     </div>
                 </div>
 
                 <div className="project-content">
-                    <h2 style={{ marginBottom: '20px', color: 'var(--text-primary)' }}>Description</h2>
+                    <h2 style={{ marginBottom: '20px', color: 'white' }}>Description</h2>
                     <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--text-primary)', marginBottom: '40px' }}>
                         {project.description}
                     </p>
 
-                    <h2 style={{ marginBottom: '20px', color: 'var(--text-primary)' }}>Technologies</h2>
+                    <h2 style={{ marginBottom: '20px', color: 'white' }}>Technologies</h2>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
                         {project.technologies.map(tech => (
                             <span key={tech} style={{
-                                background: 'var(--accent-soft)',
-                                border: '1px solid var(--accent)',
-                                color: 'var(--accent)',
+                                background: 'rgba(0, 243, 255, 0.1)',
+                                border: '1px solid var(--accent-cyan)',
+                                color: 'var(--accent-cyan)',
                                 padding: '8px 16px',
                                 borderRadius: '8px',
                                 display: 'flex',

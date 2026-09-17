@@ -4,30 +4,30 @@ import { Database, Brain, Terminal, Cloud } from 'lucide-react';
 
 const SkillSection = ({ title, skills, icon: Icon, delay }) => (
     <motion.div
-        className="card"
+        className="glass-card"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay }}
         style={{ marginBottom: '30px' }}
     >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px', borderBottom: '1px solid var(--border)', paddingBottom: '15px' }}>
-            <Icon color="var(--accent)" size={28} />
+        <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px', borderBottom: '1px solid var(--glass-border)', paddingBottom: '15px' }}>
+            <Icon color="var(--accent-cyan)" size={28} />
             <h3 style={{ margin: 0, fontSize: '1.5rem' }}>{title}</h3>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '20px' }}>
             {skills.map((skill, index) => (
-                <div key={index} style={{ background: 'var(--bg-color)', padding: '15px', borderRadius: '10px', border: '1px solid var(--border)' }}>
+                <div key={index} style={{ background: 'rgba(255,255,255,0.03)', padding: '15px', borderRadius: '8px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                        <span style={{ fontWeight: 'bold', color: 'var(--text-primary)' }}>{skill.name}</span>
-                        <span style={{ color: 'var(--accent)', fontSize: '0.85rem' }}>{skill.level}</span>
+                        <span style={{ fontWeight: 'bold', color: 'white' }}>{skill.name}</span>
+                        <span style={{ color: 'var(--accent-cyan)', fontSize: '0.85rem' }}>{skill.level}</span>
                     </div>
-                    <div style={{ width: '100%', height: '6px', background: 'var(--border)', borderRadius: '3px' }}>
+                    <div style={{ width: '100%', height: '6px', background: 'rgba(255,255,255,0.1)', borderRadius: '3px' }}>
                         <motion.div
                             initial={{ width: 0 }}
                             whileInView={{ width: skill.percent }}
                             transition={{ duration: 1, delay: 0.5 }}
-                            style={{ height: '100%', background: 'linear-gradient(90deg, var(--accent), var(--accent-2))', borderRadius: '3px' }}
+                            style={{ height: '100%', background: 'linear-gradient(90deg, var(--accent-cyan), var(--accent-purple))', borderRadius: '3px' }}
                         />
                     </div>
                 </div>

@@ -16,6 +16,11 @@ const Home = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
+                    <span className="badge">
+                        <span className="badge-dot" />
+                        Disponible pour une alternance dès septembre 2026
+                    </span>
+                    <br />
                     <img
                         src="/photo.jpg"
                         alt="Salma Bellamou"
@@ -24,9 +29,9 @@ const Home = () => {
                             height: '150px',
                             borderRadius: '50%',
                             objectFit: 'cover',
-                            border: '4px solid var(--surface)',
+                            border: '4px solid var(--accent-cyan)',
                             marginBottom: '30px',
-                            boxShadow: 'var(--shadow-md)',
+                            boxShadow: '0 0 20px rgba(0, 243, 255, 0.3)',
                             objectPosition: 'top center'
                         }}
                         onError={(e) => e.target.src = '/photo-placeholder.svg'}
@@ -34,7 +39,7 @@ const Home = () => {
                     <h1 style={{ fontSize: '3.5rem', marginBottom: '10px' }}>
                         <span className="text-gradient">SALMA BELLAMOU</span>
                     </h1>
-                    <h2 style={{ fontSize: '1.5rem', color: 'var(--text-secondary)', marginBottom: '30px', fontFamily: 'var(--font-main)', fontWeight: 500 }}>
+                    <h2 style={{ fontSize: '1.5rem', color: 'var(--text-secondary)', marginBottom: '30px' }}>
                         Future Experte Data & IA
                     </h2>
                     <p style={{ maxWidth: '600px', margin: '0 auto 40px', lineHeight: '1.6', color: 'var(--text-secondary)' }}>
@@ -42,14 +47,14 @@ const Home = () => {
                         Je transforme les données brutes en solutions intelligentes, de l'analyse statistique au Machine Learning et au NLP.
                     </p>
 
-                    <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                    <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <a href="/CV_Salma_Bellamou.pdf" download="CV_Salma_Bellamou.pdf" className="btn btn-primary" style={{ padding: '15px 30px', fontSize: '1.1rem' }}>
                             <Download size={20} /> Mon CV
                         </a>
-                        <Link to="/about" className="btn" style={{ padding: '15px 30px', fontSize: '1.1rem' }}>
+                        <Link to="/about" className="btn" style={{ border: '1px solid var(--glass-border)', background: 'var(--card-bg)', padding: '15px 30px', fontSize: '1.1rem' }}>
                             En savoir plus
                         </Link>
-                        <Link to="/projects" className="btn" style={{ padding: '15px 30px', fontSize: '1.1rem' }}>
+                        <Link to="/projects" className="btn" style={{ border: '1px solid var(--glass-border)', background: 'var(--card-bg)', padding: '15px 30px', fontSize: '1.1rem' }}>
                             Voir Projets
                         </Link>
                     </div>
@@ -59,30 +64,24 @@ const Home = () => {
             {/* Domains Teaser */}
             <section style={{ marginBottom: '100px', textAlign: 'center' }}>
                 <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '40px' }}>Mes Domaines</h2>
-                <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', flexWrap: 'wrap' }}>
                     <Link to="/domains" style={{ textDecoration: 'none' }}>
-                        <motion.div whileHover={{ y: -4 }} className="card" style={{ padding: '30px', width: '250px', height: '260px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                            <div style={{ width: '64px', height: '64px', borderRadius: '16px', background: 'var(--accent-soft)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
-                                <Database size={30} color="var(--accent)" />
-                            </div>
+                        <motion.div whileHover={{ scale: 1.05 }} className="glass-card" style={{ padding: '30px', width: '250px', height: '260px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                            <Database size={50} color="var(--accent-cyan)" style={{ marginBottom: '20px' }} />
                             <h3>Data & Analyse</h3>
                             <p style={{ color: 'var(--text-secondary)' }}>Python, SQL, Power BI</p>
                         </motion.div>
                     </Link>
                     <Link to="/domains" style={{ textDecoration: 'none' }}>
-                        <motion.div whileHover={{ y: -4 }} className="card" style={{ padding: '30px', width: '250px', height: '260px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                            <div style={{ width: '64px', height: '64px', borderRadius: '16px', background: 'var(--accent-soft)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
-                                <Brain size={30} color="var(--accent-2)" />
-                            </div>
+                        <motion.div whileHover={{ scale: 1.05 }} className="glass-card" style={{ padding: '30px', width: '250px', height: '260px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                            <Brain size={50} color="var(--accent-purple)" style={{ marginBottom: '20px' }} />
                             <h3>IA & Machine Learning</h3>
                             <p style={{ color: 'var(--text-secondary)' }}>NLP, Deep Learning, GenAI</p>
                         </motion.div>
                     </Link>
                     <Link to="/domains" style={{ textDecoration: 'none' }}>
-                        <motion.div whileHover={{ y: -4 }} className="card" style={{ padding: '30px', width: '250px', height: '260px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                            <div style={{ width: '64px', height: '64px', borderRadius: '16px', background: 'var(--accent-soft)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
-                                <Cloud size={30} color="var(--accent)" />
-                            </div>
+                        <motion.div whileHover={{ scale: 1.05 }} className="glass-card" style={{ padding: '30px', width: '250px', height: '260px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                            <Cloud size={50} color="var(--accent-cyan)" style={{ marginBottom: '20px' }} />
                             <h3>Cloud & Bases de Données</h3>
                             <p style={{ color: 'var(--text-secondary)' }}>AWS, MySQL, PostgreSQL</p>
                         </motion.div>
@@ -99,29 +98,29 @@ const Home = () => {
             {/* Certifications Section */}
             <section style={{ marginBottom: '100px', textAlign: 'center' }}>
                 <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '40px' }}>Certifications</h2>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px', maxWidth: '1100px', margin: '0 auto' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px', maxWidth: '1100px', margin: '0 auto' }}>
                     {certifications.map((cert, index) => (
                         <motion.a
                             key={index}
                             href={cert.pdf || undefined}
                             target={cert.pdf ? "_blank" : undefined}
                             rel={cert.pdf ? "noopener noreferrer" : undefined}
-                            className="card"
+                            className="glass-card"
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
-                            whileHover={cert.pdf ? { y: -4 } : {}}
+                            whileHover={cert.pdf ? { scale: 1.03, borderColor: 'var(--accent-cyan)' } : {}}
                             style={{ padding: '16px', textAlign: 'left', cursor: cert.pdf ? 'pointer' : 'default', display: 'flex', flexDirection: 'column' }}
                         >
                             {cert.image ? (
-                                <img src={cert.image} alt={cert.title} style={{ width: '100%', borderRadius: '10px', border: '1px solid var(--border)', marginBottom: '15px', aspectRatio: '1.6', objectFit: 'cover' }} />
+                                <img src={cert.image} alt={cert.title} style={{ width: '100%', borderRadius: '8px', border: '1px solid var(--glass-border)', marginBottom: '15px', aspectRatio: '1.6', objectFit: 'cover' }} />
                             ) : (
-                                <div style={{ width: '100%', aspectRatio: '1.6', borderRadius: '10px', border: '1px dashed var(--border)', marginBottom: '15px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <div style={{ width: '100%', aspectRatio: '1.6', borderRadius: '8px', border: '1px dashed var(--glass-border)', marginBottom: '15px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                     <Award size={32} color="var(--text-secondary)" />
                                 </div>
                             )}
                             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                                <Award size={20} color="var(--accent)" style={{ flexShrink: 0, marginTop: '2px' }} />
+                                <Award size={20} color="var(--accent-cyan)" style={{ flexShrink: 0, marginTop: '2px' }} />
                                 <div>
                                     <p style={{ margin: 0, color: 'var(--text-primary)', fontSize: '0.95rem', fontWeight: '600' }}>{cert.title}</p>
                                     {cert.issuer && <p style={{ margin: '4px 0 0', color: 'var(--text-secondary)', fontSize: '0.8rem' }}>{cert.issuer}{cert.date ? ` · ${cert.date}` : ''}</p>}

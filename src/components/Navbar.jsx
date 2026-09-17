@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, Menu, X } from 'lucide-react';
+import { Terminal, Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const Navbar = () => {
@@ -14,7 +14,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav style={{
+        <nav className="glass-card" style={{
             position: 'fixed',
             top: '0',
             left: '0',
@@ -25,25 +25,25 @@ const Navbar = () => {
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            background: 'rgba(255, 255, 255, 0.85)',
-            backdropFilter: 'blur(10px)',
-            borderBottom: '1px solid var(--border)',
-            boxShadow: '0 1px 0 rgba(18,19,26,0.02)'
+            borderRadius: '0',
+            borderLeft: 'none',
+            borderRight: 'none',
+            borderTop: 'none'
         }}>
             <Link to="/" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1.2rem', fontWeight: 'bold' }}>
-                <Sparkles color="var(--accent)" size={22} />
-                <span className="text-gradient" style={{ fontSize: '1.2rem', fontFamily: 'var(--font-heading)' }}>SALMA BELLAMOU</span>
+                <Terminal color="var(--accent-cyan)" />
+                <span className="text-gradient" style={{ fontSize: '1.2rem' }}>SALMA BELLAMOU</span>
             </Link>
 
             {/* Desktop Menu */}
-            <div className="desktop-menu" style={{ display: 'flex', gap: '28px', alignItems: 'center' }}>
-                <Link to="/" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s', fontSize: '0.9rem', fontWeight: 500 }}>Accueil</Link>
-                <Link to="/about" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s', fontSize: '0.9rem', fontWeight: 500 }}>À Propos</Link>
-                <Link to="/domains" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s', fontSize: '0.9rem', fontWeight: 500 }}>Domaines</Link>
-                <Link to="/skills" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s', fontSize: '0.9rem', fontWeight: 500 }}>Compétences</Link>
-                <Link to="/projects" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s', fontSize: '0.9rem', fontWeight: 500 }}>Projets</Link>
+            <div className="desktop-menu" style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+                <Link to="/" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s', fontSize: '0.9rem' }}>Accueil</Link>
+                <Link to="/about" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s', fontSize: '0.9rem' }}>À Propos</Link>
+                <Link to="/domains" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s', fontSize: '0.9rem' }}>Domaines</Link>
+                <Link to="/skills" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s', fontSize: '0.9rem' }}>Compétences</Link>
+                <Link to="/projects" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s', fontSize: '0.9rem' }}>Projets</Link>
 
-                <a href="/CV_Salma_Bellamou.pdf" download="CV_Salma_Bellamou.pdf" className="btn btn-primary" style={{ padding: '9px 18px', fontSize: '0.85rem' }}>
+                <a href="/CV_Salma_Bellamou.pdf" download="CV_Salma_Bellamou.pdf" className="btn btn-primary" style={{ padding: '8px 16px', fontSize: '0.85rem' }}>
                     CV
                 </a>
             </div>
@@ -68,7 +68,7 @@ const Navbar = () => {
                             left: 0,
                             width: '100%',
                             height: 'calc(100vh - 70px)',
-                            background: 'var(--bg-color)',
+                            background: 'var(--bg-color)', // Solid background for readability
                             zIndex: 999,
                             display: 'flex',
                             flexDirection: 'column',

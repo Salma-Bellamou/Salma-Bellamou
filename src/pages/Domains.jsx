@@ -7,7 +7,7 @@ const Domains = () => {
         {
             title: "Data & Analyse",
             icon: Database,
-            color: "var(--accent)",
+            color: "var(--accent-cyan)",
             description: "Exploitation et structuration des données pour révéler des tendances et éclairer la prise de décision.",
             details: [
                 "Data Analytics et Data Visualisation",
@@ -19,7 +19,7 @@ const Domains = () => {
         {
             title: "IA & Machine Learning",
             icon: Brain,
-            color: "var(--accent-2)",
+            color: "var(--accent-purple)",
             description: "Conception de modèles intelligents capables d'apprendre à partir des données, du texte à l'image.",
             details: [
                 "Machine Learning et Deep Learning",
@@ -31,7 +31,7 @@ const Domains = () => {
         {
             title: "Cloud & Bases de Données",
             icon: Cloud,
-            color: "var(--accent)",
+            color: "var(--accent-cyan)",
             description: "Hébergement, stockage et gestion des données à grande échelle sur des infrastructures modernes.",
             details: [
                 "AWS (EC2, S3, IAM)",
@@ -43,7 +43,7 @@ const Domains = () => {
         {
             title: "Développement & Outils",
             icon: Terminal,
-            color: "var(--accent-2)",
+            color: "var(--accent-purple)",
             description: "Une base solide en programmation et en outils collaboratifs pour mener un projet de bout en bout.",
             details: [
                 "Python, SQL, Java, C++, POO",
@@ -65,11 +65,11 @@ const Domains = () => {
                 Mes Domaines d'Expertise
             </motion.h1>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '28px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '80px' }}>
                 {domains.map((domain, index) => (
                     <motion.div
                         key={index}
-                        className="card"
+                        className="glass-card"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -77,9 +77,7 @@ const Domains = () => {
                         style={{ padding: '30px', display: 'flex', flexDirection: 'column', height: '100%' }}
                     >
                         <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-                            <div style={{ width: '56px', height: '56px', borderRadius: '14px', background: 'var(--accent-soft)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                <domain.icon size={28} color={domain.color} />
-                            </div>
+                            <domain.icon size={40} color={domain.color} />
                             <h2 style={{ fontSize: '1.5rem', margin: 0 }}>{domain.title}</h2>
                         </div>
 
