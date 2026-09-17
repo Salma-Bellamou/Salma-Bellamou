@@ -1,16 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
+import { certifications } from '../data/certifications';
 import ProjectCard from '../components/ProjectCard';
 import { motion } from 'framer-motion';
 import { Download, Database, Brain, Cloud, ArrowRight, Award } from 'lucide-react';
-
-const certifications = [
-    "Final Exam – AI & GenAI Level 2 (Liora)",
-    "Prompt Engineering – IA & GenAI",
-    "Structuring Data & Exploring GenAI Tools",
-    "Google Sheets Marketing (DataScientest)"
-];
 
 const Home = () => {
     return (
@@ -23,7 +17,7 @@ const Home = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <img
-                        src="/photo.png"
+                        src="/photo.jpg"
                         alt="Salma Bellamou"
                         style={{
                             width: '150px',
@@ -99,19 +93,35 @@ const Home = () => {
             {/* Certifications Section */}
             <section style={{ marginBottom: '100px', textAlign: 'center' }}>
                 <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '40px' }}>Certifications</h2>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px', maxWidth: '900px', margin: '0 auto' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '25px', maxWidth: '1100px', margin: '0 auto' }}>
                     {certifications.map((cert, index) => (
-                        <motion.div
+                        <motion.a
                             key={index}
+                            href={cert.pdf || undefined}
+                            target={cert.pdf ? "_blank" : undefined}
+                            rel={cert.pdf ? "noopener noreferrer" : undefined}
                             className="glass-card"
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
-                            style={{ padding: '20px', display: 'flex', alignItems: 'center', gap: '12px', textAlign: 'left' }}
+                            whileHover={cert.pdf ? { scale: 1.03, borderColor: 'var(--accent-cyan)' } : {}}
+                            style={{ padding: '16px', textAlign: 'left', cursor: cert.pdf ? 'pointer' : 'default', display: 'flex', flexDirection: 'column' }}
                         >
-                            <Award size={28} color="var(--accent-cyan)" style={{ flexShrink: 0 }} />
-                            <span style={{ color: 'var(--text-primary)', fontSize: '0.95rem' }}>{cert}</span>
-                        </motion.div>
+                            {cert.image ? (
+                                <img src={cert.image} alt={cert.title} style={{ width: '100%', borderRadius: '8px', border: '1px solid var(--glass-border)', marginBottom: '15px', aspectRatio: '1.6', objectFit: 'cover' }} />
+                            ) : (
+                                <div style={{ width: '100%', aspectRatio: '1.6', borderRadius: '8px', border: '1px dashed var(--glass-border)', marginBottom: '15px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                    <Award size={32} color="var(--text-secondary)" />
+                                </div>
+                            )}
+                            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                                <Award size={20} color="var(--accent-cyan)" style={{ flexShrink: 0, marginTop: '2px' }} />
+                                <div>
+                                    <p style={{ margin: 0, color: 'var(--text-primary)', fontSize: '0.95rem', fontWeight: '600' }}>{cert.title}</p>
+                                    {cert.issuer && <p style={{ margin: '4px 0 0', color: 'var(--text-secondary)', fontSize: '0.8rem' }}>{cert.issuer}{cert.date ? ` · ${cert.date}` : ''}</p>}
+                                </div>
+                            </div>
+                        </motion.a>
                     ))}
                 </div>
             </section>

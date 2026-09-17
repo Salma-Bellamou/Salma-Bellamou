@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, GraduationCap, Award, Download, Mail, Linkedin, Phone, Languages } from 'lucide-react';
 import Toast from '../components/Toast';
+import { certifications } from '../data/certifications';
 
 const experiences = [
     {
@@ -36,13 +37,6 @@ const experiences = [
     }
 ];
 
-const certifications = [
-    "Final Exam – AI & GenAI Level 2 (Liora)",
-    "Prompt Engineering – IA & GenAI",
-    "Structuring Data & Exploring GenAI Tools",
-    "Google Sheets Marketing (DataScientest)"
-];
-
 const About = () => {
     const [toast, setToast] = useState({ isVisible: false, message: '' });
 
@@ -73,7 +67,7 @@ const About = () => {
                     <motion.img
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
-                        src="/photo.png"
+                        src="/photo.jpg"
                         alt="Salma Bellamou"
                         style={{
                             width: '120px',
@@ -182,12 +176,31 @@ const About = () => {
                         <h2 style={{ fontSize: '2rem', margin: 0 }}>Certifications</h2>
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
                         {certifications.map((cert, index) => (
-                            <div key={index} className="glass-card" style={{ padding: '20px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                <Award size={24} color="var(--accent-cyan)" style={{ flexShrink: 0 }} />
-                                <span style={{ color: 'var(--text-primary)', fontSize: '0.95rem' }}>{cert}</span>
-                            </div>
+                            <a
+                                key={index}
+                                href={cert.pdf || undefined}
+                                target={cert.pdf ? "_blank" : undefined}
+                                rel={cert.pdf ? "noopener noreferrer" : undefined}
+                                className="glass-card"
+                                style={{ padding: '16px', display: 'flex', flexDirection: 'column', textDecoration: 'none', cursor: cert.pdf ? 'pointer' : 'default' }}
+                            >
+                                {cert.image ? (
+                                    <img src={cert.image} alt={cert.title} style={{ width: '100%', borderRadius: '8px', border: '1px solid var(--glass-border)', marginBottom: '12px', aspectRatio: '1.6', objectFit: 'cover' }} />
+                                ) : (
+                                    <div style={{ width: '100%', aspectRatio: '1.6', borderRadius: '8px', border: '1px dashed var(--glass-border)', marginBottom: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <Award size={28} color="var(--text-secondary)" />
+                                    </div>
+                                )}
+                                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                                    <Award size={20} color="var(--accent-cyan)" style={{ flexShrink: 0, marginTop: '2px' }} />
+                                    <div>
+                                        <p style={{ margin: 0, color: 'var(--text-primary)', fontSize: '0.95rem', fontWeight: '600' }}>{cert.title}</p>
+                                        {cert.issuer && <p style={{ margin: '4px 0 0', color: 'var(--text-secondary)', fontSize: '0.8rem' }}>{cert.issuer}{cert.date ? ` · ${cert.date}` : ''}</p>}
+                                    </div>
+                                </div>
+                            </a>
                         ))}
                     </div>
                 </section>
